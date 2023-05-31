@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const limiter = require('./utils/rateLimit');
 
 const routes = require('./routes');
 const centralErrorUnit = require('./errors/centralErrorUnit');
@@ -12,6 +13,7 @@ const centralErrorUnit = require('./errors/centralErrorUnit');
 const { PORT = 3000 } = process.env;
 const app = express();
 
+app.use(limiter);
 app.use(cookieParser());
 app.use(helmet());
 app.use(express.json());
