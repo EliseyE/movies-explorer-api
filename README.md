@@ -7,7 +7,7 @@
 
 ## Ссылки на проект
 
-IP 158.160.21.72
+IP 158.160.7.134
 
 Backend https://api.mexp.nomoredomains.rocks
 
