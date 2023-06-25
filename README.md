@@ -11,6 +11,8 @@ IP 84.201.142.103
 
 Backend https://api.mexp.nomoredomains.rocks
 
+Frontend https://mexp.nomoredomains.rocks
+
 #
 
 ## О проекте
