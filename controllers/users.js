@@ -38,6 +38,7 @@ module.exports.createUser = (req, res, next) => {
       email: user.email,
       name: user.name,
       _id: user._id,
+      message: 'Вы успешно зарегистрировались!',
     }))
     .catch((err) => { next(errorHeandler(err)); });
 };

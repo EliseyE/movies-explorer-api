@@ -20,7 +20,7 @@ router.use('/users', auth, usersRouter);
 router.use('/movies', auth, moviesRouter);
 
 router.use('/*', (req, res, next) => {
-  next(new NotFoundError('Path not found'));
+  next(new NotFoundError('Страница по указанному маршруту не найдена'));
 });
 
 module.exports = router;

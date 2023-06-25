@@ -8,14 +8,14 @@ const { JWT_SECRET } = require('../appConfig');
 module.exports.auth = (req, res, next) => {
   const token = req.cookies.jwt;
 
-  if (!token) return next(new UnauthorizedError('Authorization required'));
+  if (!token) return next(new UnauthorizedError('При авторизации произошла ошибка. Токен не передан или передан не в том формате'));
 
   let payload;
 
   try {
     payload = JWT.verify(token, JWT_SECRET);
   } catch (err) {
-    return next(new UnauthorizedError('Authorization required'));
+    return next(new UnauthorizedError('При авторизации произошла ошибка. Переданный токен некорректен.'));
   }
 
   req.user = payload;

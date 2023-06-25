@@ -31,7 +31,7 @@ const movieSchema = new mongoose.Schema(
         message: (props) => `Incorrect url format: ${props.value}`,
       },
     },
-    trailerLink: {
+    trailer: {
       type: String,
       required: [true, 'Required field trailerLink'],
       validate: {
