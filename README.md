@@ -7,7 +7,7 @@
 
 ## Ссылки на проект
 
-IP 158.160.7.134
+IP 84.201.142.103
 
 Backend https://api.mexp.nomoredomains.rocks
 
@@ -25,6 +25,10 @@ POST `/signup` - создаёт пользователя с переданным
 email, password и name
 
 POST `/signin` - проверяет переданные в теле почту и пароль и возвращает JWT
+
+POST `/jwtcheck` - проверяет JWT cookies, положительный ответ - 200 и id пользователя
+
+POST `/logout` - удаляет JWT из cookies
 
 GET `/users/me` - возвращает информацию о пользователе (email и имя)
 

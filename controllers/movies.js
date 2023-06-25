@@ -28,7 +28,7 @@ module.exports.createMovie = (req, res, next) => {
   Movie.find({ owner: req.user._id })
     .then((movies) => movies.findIndex((item) => item.movieId === movieId))
     .then((movieIsNotCreated) => {
-      if (movieIsNotCreated === '-1') {
+      if (movieIsNotCreated === -1) {
         Movie.create({
           country,
           director,
@@ -36,7 +36,7 @@ module.exports.createMovie = (req, res, next) => {
           year,
           description,
           image,
-          trailerLink: trailer,
+          trailer,
           thumbnail,
           movieId,
           nameRU,
