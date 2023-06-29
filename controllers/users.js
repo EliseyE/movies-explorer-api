@@ -21,7 +21,10 @@ module.exports.updateUserInfo = (req, res, next) => {
     { new: true, runValidators: true },
   )
     .orFail()
-    .then((user) => res.json(user))
+    .then((user) => res.json({
+      user,
+      message: 'Данные вашего профиля успешно обновлены!',
+    }))
     .catch((err) => { next(errorHeandler(err)); });
 };
 
